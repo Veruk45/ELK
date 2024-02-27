@@ -17,6 +17,7 @@ Cấu hình file winlogbeat.yml
 - mv tới thư mục winlogbeat
 - mở powershell
 - powershell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
-- .\winlogbeat.exe -e test config-
+- .\winlogbeat.exe -e test config
+check error:
 - .\winlogbeat.exe -c winlogbeat.yml -e -d "*"
 - Start-Service winlogbeat
