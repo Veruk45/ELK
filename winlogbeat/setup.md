@@ -14,10 +14,9 @@ Cài đặt winlogbeat và metricbeat
 Giải nén, đổi tên folder thành winlogbeat và metricbeat 
 
 Cấu hình file winlogbeat.yml
-
-Chạy lệnh sau trong powershell với quyền admin: 
-
-Set-ExecutionPolicy unrestricted 
-
-Chay script install với quyền admin. 
-![image](https://github.com/Veruk45/ELK/assets/95947239/9a8794ab-b83e-4bb4-819e-0f4bc24d707f)
+- mv tới thư mục winlogbeat
+- mở powershell
+- powershell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
+- .\winlogbeat.exe -e test config-
+- .\winlogbeat.exe -c winlogbeat.yml -e -d "*"
+- Start-Service winlogbeat
