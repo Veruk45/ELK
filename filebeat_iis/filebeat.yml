@@ -113,7 +113,10 @@ setup.kibana:
   # In case you specify and additional path, the scheme is required: http://localhost:5601/path
   # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
   host: "https://10.20.7.252:5601"
-
+  ssl.enabled: true
+  ssl.certificate_authorities: ["/etc/filebeat/ssl/ca.crt"]
+  ssl.certificate: "/etc/filebeat/ssl/localhost.crt"
+  ssl.key: "/etc/filebeat/ssl/localhost.key"
   # Kibana Space ID
   # ID of the Kibana Space into which the dashboards should be loaded. By default,
   # the Default Space will be used.
@@ -139,19 +142,23 @@ setup.kibana:
 # ---------------------------- Elasticsearch Output ----------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["10.0.249.135:9200"]
+  hosts: ["10.20.7.252:9200"]
 
   # Performance preset - one of "balanced", "throughput", "scale",
   # "latency", or "custom".
   preset: balanced
 
   # Protocol - either `http` (default) or `https`.
-  #protocol: "https"
+  protocol: "https"
 
   # Authentication credentials - either API key or username/password.
   #api_key: "id:api_key"
-  #username: "elastic"
-  #password: "changeme"
+  username: "elastic"
+  password: "dlu2024"
+  ssl.enabled: true
+  ssl.certificate_authorities: ["/etc/filebeat/ssl/ca.crt"]
+  ssl.certificate: "/etc/filebeat/ssl/localhost.crt"
+  ssl.key: "/etc/filebeat/ssl/localhost.key"
 
 # ------------------------------ Logstash Output -------------------------------
 #output.logstash:
