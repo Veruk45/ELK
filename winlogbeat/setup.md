@@ -13,8 +13,7 @@ Cài đặt winlogbeat và metricbeat
 
 Giải nén, đổi tên folder thành winlogbeat và metricbeat 
 
-Comment lại module elasticsearch, chỉnh sửa lại IP và port của module logstash trong file cấu hình (winlogbeat.yml, metricbeat.yml). 
-
+Cấu hình file winlogbeat.yml
 
 Chạy lệnh sau trong powershell với quyền admin: 
 
